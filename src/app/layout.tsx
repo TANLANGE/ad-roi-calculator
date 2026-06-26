@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description:
     '免费在线计算广告投放 ROI、回本周期和单品毛利的中文工具站，帮助你做出更明智的投流决策。',
   keywords: ['投流ROI计算', '广告回本周期', '电商毛利计算', '广告投放计算', '抖音投流'],
+  verification: {
+    google: '4JRnax0GGUvQ7VjhXDJ_4AiqO63fvb8KFYZR3Ab9SuQ',
+  },
   openGraph: {
     title: '投流回本计算器 — 免费测算 ROI、回本周期与毛利',
     description: '免费在线计算广告投放 ROI、回本周期和单品毛利的中文工具站',
