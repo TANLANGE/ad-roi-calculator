@@ -12,9 +12,8 @@ export default function BaiduAnalytics() {
     // 仅在生产环境下加载统计代码
     if (process.env.NODE_ENV !== 'production') return;
 
-    // 百度统计代码 - 需要替换为实际的统计ID
-    // 注册百度统计：https://tongji.baidu.com
-    const BAIDU_ANALYTICS_ID = 'YOUR_BAIDU_ANALYTICS_ID';
+    // 百度统计代码
+    const BAIDU_ANALYTICS_ID = '4ef1310d27dee8f54b65e0c30572a350';
 
     // 动态加载百度统计脚本
     const script = document.createElement('script');
