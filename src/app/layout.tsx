@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import SiteHeader from '@/components/site-header';
 import SiteFooter from '@/components/site-footer';
 import BaiduPush from '@/components/baidu-push';
+import BaiduAnalytics from '@/components/baidu-analytics';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -59,6 +60,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <BaiduPush />
+        <BaiduAnalytics />
       </body>
     </html>
   );
