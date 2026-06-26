@@ -3,7 +3,7 @@ import { getAllSlugs } from '@/lib/guides';
 
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://traffic-roi.com';
+const BASE_URL = 'https://www.ad-roi.cn';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://traffic-roi.com/sitemap.xml',
+    sitemap: 'https://www.ad-roi.cn/sitemap.xml',
   };
 }

@@ -5,6 +5,7 @@ import CalculatorShell from '@/components/calculator-shell';
 import CalculatorField from '@/components/calculator-field';
 import ResultCard from '@/components/result-card';
 import LeadForm from '@/components/lead-form';
+import ShareButtons from '@/components/share-buttons';
 import { calculateRoi } from '@/lib/calculators';
 import { formatCurrency, formatPercent } from '@/lib/format';
 
@@ -88,6 +89,7 @@ export default function RoiCalculatorPage() {
       }
     />
     {result && <LeadForm source="roi" />}
+    <ShareButtons title="投流ROI计算器 - 免费计算广告投放回报率" description="快速计算抖音、电商广告投放的ROI、净利润和获客成本" />
   </>
   );
 }
