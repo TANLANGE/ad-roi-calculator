@@ -7,7 +7,7 @@ export default function Hero() {
         <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#b45309]">
           免费 · 无需注册
         </span>
-        <h1 className="mt-4 text-5xl font-bold leading-[1.1] tracking-tight text-[#1a1a1a] sm:text-6xl">
+        <h1 className="mt-4 text-5xl font-extrabold leading-[1.05] tracking-[-0.04em] text-[#1a1a1a] sm:text-6xl">
           让每一分<br />广告费都<br />
           <span className="text-[#b45309]">有据可依</span>
         </h1>
