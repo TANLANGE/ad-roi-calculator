@@ -4,6 +4,18 @@ export const metadata: Metadata = {
   title: '联系我们 — 投流回本计算器',
   description:
     '有任何问题或建议，欢迎通过邮件与我们联系。我们会在 24 小时内回复。',
+  keywords: ['联系投流计算器', '广告投放咨询', '电商运营问题', 'ROI计算帮助'],
+  openGraph: {
+    title: '联系我们 — 投流回本计算器',
+    description: '有任何问题或建议，欢迎通过邮件与我们联系',
+    url: 'https://www.ad-roi.cn/contact',
+    siteName: '投流回本计算器',
+    locale: 'zh_CN',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ad-roi.cn/contact',
+  },
 };
 
 export default function ContactPage() {

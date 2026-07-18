@@ -23,6 +23,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${guide.title} — 投流指南`,
     description: guide.summary,
+    keywords: [guide.title, '投流指南', '广告投放', '电商运营', 'ROI计算'],
+    openGraph: {
+      title: `${guide.title} — 投流指南`,
+      description: guide.summary,
+      url: `https://www.ad-roi.cn/guides/${slug}`,
+      siteName: '投流回本计算器',
+      locale: 'zh_CN',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${guide.title} — 投流指南`,
+      description: guide.summary,
+    },
+    alternates: {
+      canonical: `https://www.ad-roi.cn/guides/${slug}`,
+    },
   };
 }
 
@@ -223,28 +240,59 @@ export default async function GuideDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  // 结构化数据 - Article Schema
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.title,
+    description: guide.summary,
+    url: `https://www.ad-roi.cn/guides/${slug}`,
+    datePublished: '2026-06-01',
+    dateModified: '2026-06-30',
+    author: {
+      '@type': 'Organization',
+      name: '投流回本计算器',
+      url: 'https://www.ad-roi.cn',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '投流回本计算器',
+      url: 'https://www.ad-roi.cn',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.ad-roi.cn/guides/${slug}`,
+    },
+  };
+
   return (
-    <article className="mx-auto max-w-3xl px-6 py-16">
-      <header className="mb-10">
-        <p className="text-sm text-cyan-400">投流指南</p>
-        <h1 className="mt-2 text-3xl font-bold text-slate-50 sm:text-4xl">
-          {guide.title}
-        </h1>
-        <p className="mt-4 text-slate-400">{guide.summary}</p>
-      </header>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <article className="mx-auto max-w-3xl px-6 py-16">
+        <header className="mb-10">
+          <p className="text-sm text-cyan-400">投流指南</p>
+          <h1 className="mt-2 text-3xl font-bold text-slate-50 sm:text-4xl">
+            {guide.title}
+          </h1>
+          <p className="mt-4 text-slate-400">{guide.summary}</p>
+        </header>
 
-      <div className="prose-custom">{renderMarkdown(guide.content)}</div>
+        <div className="prose-custom">{renderMarkdown(guide.content)}</div>
 
-      <footer className="mt-16 border-t border-cyan-400/10 pt-8">
-        <Link
-          href="/guides"
-          className="text-sm text-cyan-400 hover:text-cyan-300"
-        >
-          ← 返回指南列表
-        </Link>
-      </footer>
+        <footer className="mt-16 border-t border-cyan-400/10 pt-8">
+          <Link
+            href="/guides"
+            className="text-sm text-cyan-400 hover:text-cyan-300"
+          >
+            ← 返回指南列表
+          </Link>
+        </footer>
 
-      <CtaBanner />
-    </article>
+        <CtaBanner />
+      </article>
+    </>
   );
 }

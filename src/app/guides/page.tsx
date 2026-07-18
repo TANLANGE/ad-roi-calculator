@@ -5,7 +5,19 @@ import { guides } from '@/lib/guides';
 export const metadata: Metadata = {
   title: '投流指南 — ROI、回本周期与毛利率计算教程',
   description:
-    '深入了解广告投放 ROI 计算、回本周期评估和电商毛利率分析的实用指南。',
+    '深入了解广告投放 ROI 计算、回本周期评估和电商毛利率分析的实用指南。包含抖音投流、千川ROI、信息流广告等专业教程。',
+  keywords: ['投流指南', 'ROI计算教程', '回本周期计算', '毛利率计算', '抖音投流教程', '千川ROI计算'],
+  openGraph: {
+    title: '投流指南 — ROI、回本周期与毛利率计算教程',
+    description: '深入了解广告投放 ROI 计算、回本周期评估和电商毛利率分析的实用指南',
+    url: 'https://www.ad-roi.cn/guides',
+    siteName: '投流回本计算器',
+    locale: 'zh_CN',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ad-roi.cn/guides',
+  },
 };
 
 export default function GuidesPage() {

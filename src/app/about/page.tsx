@@ -3,7 +3,19 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: '关于我们 — 投流回本计算器',
   description:
-    '了解投流回本计算器的创建初衷、团队理念和发展方向。',
+    '了解投流回本计算器的创建初衷、团队理念和发展方向。我们致力于为电商卖家提供免费、专业的广告投放计算工具。',
+  keywords: ['关于投流计算器', '电商计算工具', '广告投放工具', '免费ROI计算'],
+  openGraph: {
+    title: '关于我们 — 投流回本计算器',
+    description: '了解投流回本计算器的创建初衷、团队理念和发展方向',
+    url: 'https://www.ad-roi.cn/about',
+    siteName: '投流回本计算器',
+    locale: 'zh_CN',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ad-roi.cn/about',
+  },
 };
 
 export default function AboutPage() {

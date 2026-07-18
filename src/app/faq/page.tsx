@@ -4,6 +4,18 @@ export const metadata: Metadata = {
   title: '常见问题 — 投流回本计算器',
   description:
     '关于 ROI 计算器、回本周期计算和毛利计算的常见问题解答。',
+  keywords: ['投流计算常见问题', 'ROI计算问题', '回本周期问题', '毛利计算问题', '电商投流FAQ'],
+  openGraph: {
+    title: '常见问题 — 投流回本计算器',
+    description: '关于 ROI 计算器、回本周期计算和毛利计算的常见问题解答',
+    url: 'https://www.ad-roi.cn/faq',
+    siteName: '投流回本计算器',
+    locale: 'zh_CN',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://www.ad-roi.cn/faq',
+  },
 };
 
 const faqs = [
@@ -49,31 +61,51 @@ const faqs = [
   },
 ];
 
+// 结构化数据 - FAQ Schema
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function FaqPage() {
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="text-center text-2xl font-bold text-slate-50 sm:text-3xl">
-        常见问题
-      </h1>
-      <p className="mx-auto mt-3 max-w-xl text-center text-slate-400">
-        关于投流计算器的常见问题解答，帮助你更好地使用我们的工具。
-      </p>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <section className="mx-auto max-w-3xl px-6 py-16">
+        <h1 className="text-center text-2xl font-bold text-slate-50 sm:text-3xl">
+          常见问题
+        </h1>
+        <p className="mx-auto mt-3 max-w-xl text-center text-slate-400">
+          关于投流计算器的常见问题解答，帮助你更好地使用我们的工具。
+        </p>
 
-      <dl className="mt-12 space-y-8">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="rounded-2xl border border-cyan-400/15 bg-slate-900 p-8"
-          >
-            <dt className="text-lg font-semibold text-slate-50">
-              {faq.question}
-            </dt>
-            <dd className="mt-3 text-sm leading-7 text-slate-400">
-              {faq.answer}
-            </dd>
-          </div>
-        ))}
-      </dl>
-    </section>
+        <dl className="mt-12 space-y-8">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="rounded-2xl border border-cyan-400/15 bg-slate-900 p-8"
+            >
+              <dt className="text-lg font-semibold text-slate-50">
+                {faq.question}
+              </dt>
+              <dd className="mt-3 text-sm leading-7 text-slate-400">
+                {faq.answer}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </>
   );
 }
