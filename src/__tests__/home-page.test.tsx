@@ -19,6 +19,6 @@ describe('HomePage', () => {
   });
 
   it('renders the hot guides section', () => {
-    expect(screen.getByText(/热门投流指南/i)).toBeInTheDocument();
+    expect(screen.getByText(/投流指南/i)).toBeInTheDocument();
   });
 });

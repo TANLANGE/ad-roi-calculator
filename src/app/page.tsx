@@ -8,14 +8,12 @@ const tools = [
   { num: '03', title: '毛利计算', desc: '计算单品售价、成本与广告费的综合毛利和利润率。', href: '/profit-calculator' },
 ];
 
-const guides = allGuides.map((g) => ({ title: g.title, href: `/guides/${g.slug}` }));
-
 export default function HomePage() {
   return (
     <>
       <Hero />
 
-      {/* 核心工具 — 编号卡片 */}
+      {/* 核心工具 */}
       <section className="mx-auto max-w-[1100px] border-t border-[#e8e4d9] px-8 py-20">
         <h2 className="text-3xl font-bold tracking-tight text-[#1a1a1a]">核心计算工具</h2>
         <p className="mt-2 text-sm text-[#a8a29e]">三大工具覆盖投流核心指标，免费使用，即算即得。</p>
@@ -30,21 +28,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 热门指南 — 两栏布局 */}
-      <section className="mx-auto max-w-[1100px] px-8 py-20">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+      {/* 投流指南 — 卡片网格，全部8篇可见 */}
+      <section className="mx-auto max-w-[1100px] border-t border-[#e8e4d9] px-8 py-20">
+        <div className="mb-10 flex items-end justify-between">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-[#1a1a1a]">热门投流指南</h2>
-            <p className="mt-2 text-sm text-[#a8a29e]">深入了解投流技巧，提升每一分广告预算的效果。</p>
+            <h2 className="text-3xl font-bold tracking-tight text-[#1a1a1a]">投流指南</h2>
+            <p className="mt-2 text-sm text-[#a8a29e]">从入门到精通，覆盖抖音、小红书、拼多多等主流平台。</p>
           </div>
-          <div>
-            {guides.map((guide) => (
-              <Link key={guide.href} href={guide.href} className="group flex items-center justify-between border-b border-[#e8e4d9] py-4 text-sm font-medium text-[#1a1a1a] transition-all hover:pl-2 hover:text-[#b45309]">
+          <Link href="/guides" className="hidden text-sm font-medium text-[#b45309] hover:text-[#92400e] sm:block">
+            浏览全部 →
+          </Link>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {allGuides.map((guide) => (
+            <Link
+              key={guide.slug}
+              href={`/guides/${guide.slug}`}
+              className="group rounded-xl border border-[#e8e4d9] bg-white p-5 transition-all hover:border-[#b45309] hover:shadow-[0_4px_20px_rgba(180,83,9,0.06)]"
+            >
+              <h3 className="text-sm font-semibold leading-snug text-[#1a1a1a] group-hover:text-[#b45309]">
                 {guide.title}
-                <span className="text-[#d6d3d1] group-hover:text-[#b45309]">→</span>
-              </Link>
-            ))}
-          </div>
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-[#a8a29e] line-clamp-2">
+                {guide.summary}
+              </p>
+              <span className="mt-3 inline-block text-xs font-medium text-[#b45309] opacity-0 transition-opacity group-hover:opacity-100">
+                阅读 →
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-6 text-center sm:hidden">
+          <Link href="/guides" className="text-sm font-medium text-[#b45309] hover:text-[#92400e]">
+            浏览全部 8 篇指南 →
+          </Link>
         </div>
       </section>
 
