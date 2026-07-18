@@ -16,7 +16,7 @@ type LeadFormProps = {
  *
  * 免费套餐：50次提交/月，对起步足够
  */
-const FORMSPREE_FORM_ID = 'YOUR_FORM_ID'; // TODO: 替换为你的 Formspree Form ID
+const FORMSPREE_FORM_ID = 'xdaqgnok';
 
 export default function LeadForm({ source }: LeadFormProps) {
   const [name, setName] = useState('');
