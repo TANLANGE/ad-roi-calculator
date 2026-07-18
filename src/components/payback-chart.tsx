@@ -25,12 +25,12 @@ export default function PaybackChart({ points }: PaybackChartProps) {
       {
         label: '累计利润',
         data: points.map((p) => p.profit),
-        borderColor: '#22d3ee',
-        backgroundColor: 'rgba(34, 211, 238, 0.1)',
+        borderColor: '#d97706',
+        backgroundColor: 'rgba(245, 158, 11, 0.1)',
         fill: true,
         tension: 0.3,
         pointRadius: 4,
-        pointBackgroundColor: '#22d3ee',
+        pointBackgroundColor: '#d97706',
       },
     ],
   };

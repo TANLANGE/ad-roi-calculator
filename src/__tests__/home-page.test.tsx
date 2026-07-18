@@ -13,7 +13,7 @@ describe('HomePage', () => {
   });
 
   it('provides a link to the ROI calculator', () => {
-    const roiLink = screen.getByRole('link', { name: /开始计算 roi/i });
+    const roiLink = screen.getByRole('link', { name: /开始计算/ });
     expect(roiLink).toBeInTheDocument();
     expect(roiLink).toHaveAttribute('href', '/roi-calculator');
   });

@@ -1,5 +1,3 @@
-'use client';
-
 type ResultCardProps = {
   label: string;
   value: string;
@@ -9,16 +7,16 @@ type ResultCardProps = {
 export default function ResultCard({ label, value, accent = false }: ResultCardProps) {
   return (
     <div
-      className={`rounded-xl border p-5 text-center ${
+      className={`rounded-lg border p-4 ${
         accent
-          ? 'border-cyan-400/30 bg-cyan-400/10'
-          : 'border-cyan-400/10 bg-slate-800'
+          ? 'border-amber-200 bg-amber-50'
+          : 'border-slate-100 bg-slate-50'
       }`}
     >
-      <p className="text-sm text-slate-400">{label}</p>
+      <p className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</p>
       <p
-        className={`mt-2 text-2xl font-bold ${
-          accent ? 'text-cyan-300' : 'text-slate-50'
+        className={`mt-1 text-2xl font-semibold tabular-nums ${
+          accent ? 'text-amber-700' : 'text-slate-900'
         }`}
       >
         {value}

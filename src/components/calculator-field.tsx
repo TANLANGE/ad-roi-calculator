@@ -1,4 +1,4 @@
-'use client';
+import type React from 'react';
 
 type CalculatorFieldProps = {
   label: string;
@@ -12,20 +12,13 @@ type CalculatorFieldProps = {
 };
 
 export default function CalculatorField({
-  label,
-  value,
-  onChange,
-  id,
-  suffix,
-  min = 0,
-  max,
-  step = 1,
+  label, value, onChange, id, suffix, min = 0, max, step = 1,
 }: CalculatorFieldProps) {
   return (
     <div>
-      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-slate-300">
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-slate-700">
         {label}
-        {suffix && <span className="ml-1 text-slate-500">{suffix}</span>}
+        {suffix && <span className="ml-1 font-normal text-slate-400">{suffix}</span>}
       </label>
       <input
         id={id}
@@ -35,7 +28,7 @@ export default function CalculatorField({
         min={min}
         max={max}
         step={step}
-        className="w-full rounded-lg border border-cyan-400/20 bg-slate-800 px-4 py-2.5 text-slate-50 outline-none transition-colors focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/30"
+        className="w-full rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-100"
       />
     </div>
   );

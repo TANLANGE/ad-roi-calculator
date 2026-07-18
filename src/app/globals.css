@@ -1,15 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500&display=swap');
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-hover: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-hover: #cbd5e1;
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-accent: #f59e0b;
+  --color-accent-hover: #d97706;
+  --color-accent-subtle: #fef3c7;
+  --color-accent-text: #92400e;
+  --font-sans: 'Source Sans 3', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-mono: 'Source Code Pro', 'SF Mono', 'Menlo', monospace;
+  --shadow-card: 0 1px 3px 0 rgba(0,0,0,.04), 0 1px 2px -1px rgba(0,0,0,.06);
+  --shadow-card-hover: 0 4px 6px -2px rgba(0,0,0,.05), 0 10px 15px -3px rgba(0,0,0,.06);
+  --shadow-input: 0 0 0 1px rgba(0,0,0,.06), 0 1px 3px 0 rgba(0,0,0,.04);
 }
 
 body {
-  font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-  background-color: #020617; /* slate-950 */
-  color: #f8fafc; /* slate-50 */
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular numbers for financial data */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 a {
   text-decoration: none;
 }
+
+/* Refined scrollbar for light mode */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
