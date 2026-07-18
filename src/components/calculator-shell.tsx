@@ -1,25 +1,15 @@
 import type { ReactNode } from 'react';
 
-type CalculatorShellProps = {
-  title: string;
-  description: string;
-  left: ReactNode;
-  right: ReactNode;
-};
+type CalculatorShellProps = { title: string; description: string; left: ReactNode; right: ReactNode };
 
 export default function CalculatorShell({ title, description, left, right }: CalculatorShellProps) {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12">
-      <h1 className="text-2xl font-semibold tracking-tight text-slate-900">{title}</h1>
-      <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500">{description}</p>
-
+    <section className="mx-auto max-w-[1100px] px-8 py-12">
+      <h1 className="text-2xl font-bold tracking-tight text-[#1a1a1a]">{title}</h1>
+      <p className="mt-2 max-w-xl text-sm text-[#78716c]">{description}</p>
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          {left}
-        </div>
-        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          {right}
-        </div>
+        <div className="rounded-xl border border-[#e8e4d9] bg-white p-6">{left}</div>
+        <div className="rounded-xl border border-[#e8e4d9] bg-white p-6">{right}</div>
       </div>
     </section>
   );

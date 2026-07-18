@@ -8,7 +8,7 @@ describe('HomePage', () => {
 
   it('renders the main heading', () => {
     expect(
-      screen.getByRole('heading', { name: /投流回本计算器/i }),
+      screen.getByRole('heading', { name: /有据可依/i }),
     ).toBeInTheDocument();
   });
 
